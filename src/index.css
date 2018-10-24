@@ -12,3 +12,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+.header-container {
+  top: 0;
+  width: 100%;
+}
+
+.locations-container {
+  float: left;
+  width: 30%;
+}
+
+.map-container {
+  float: right;
+  width: 70%;
+}

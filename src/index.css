@@ -17,6 +17,7 @@ code {
 .header-container {
   top: 0;
   width: 100%;
+  padding: 15px;
 }
 
 .locations-container {
@@ -27,4 +28,5 @@ code {
 .map-container {
   float: right;
   width: 70%;
+  height: 100vh;
 }

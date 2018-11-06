@@ -21,8 +21,18 @@ code {
 }
 
 .sidebar {
+  padding: 30px 0 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
   float: left;
   width: 25%;
+  overflow-y: scroll;
+}
+
+.sidebar-list {
+  list-style-type: none;
+  margin: 15px;
 }
 
 .map-container {

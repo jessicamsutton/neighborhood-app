@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {DebounceInput} from 'react-debounce-input';
-import '../data/locations.json';
+import Locations from '../data/locations.json';
 
 
 class Sidebar extends Component {
@@ -14,7 +14,6 @@ class Sidebar extends Component {
   render(){
     return(
       <aside className="sidebar">
-
         <div className="input-container">
           <DebounceInput
             type="text"
@@ -25,11 +24,15 @@ class Sidebar extends Component {
             onChange={event => this.setState({value: event.target.value})}
           />
         </div>
-
-        <div>
-
-        </div>
-          <p>This is the list of locations</p>
+        <ul>
+          {
+            Locations.map((location) => {
+              return  <li className="sidebar-list" key={location.key}>
+                        {location.name}
+                      </li>
+            })
+          }
+        </ul>
       </aside>
     )
   }

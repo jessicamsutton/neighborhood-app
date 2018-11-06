@@ -10,9 +10,9 @@ class MapContainer extends Component {
 
   render() {
     return (
-      <div className="map-container">
+      <main className="map-container">
         <p>This is a map. Trust me.</p>
-      </div>
+      </main>
     );
   }
 }

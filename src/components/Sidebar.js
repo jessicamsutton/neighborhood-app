@@ -13,7 +13,7 @@ class Sidebar extends Component {
 
   render(){
     return(
-      <div className="locations-container">
+      <aside className="locations-container">
 
         <div className="input-container">
           <DebounceInput
@@ -30,7 +30,7 @@ class Sidebar extends Component {
 
         </div>
           <p>This is the list of locations</p>
-      </div>
+      </aside>
     )
   }
 };

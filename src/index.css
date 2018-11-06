@@ -22,11 +22,11 @@ code {
 
 .locations-container {
   float: left;
-  width: 30%;
+  width: 25%;
 }
 
 .map-container {
   float: right;
-  width: 70%;
+  width: 75%;
   height: 100vh;
 }

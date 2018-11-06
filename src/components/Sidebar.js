@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import {DebounceInput} from 'react-debounce-input';
+import '../data/locations.json';
 
 
-class Locations extends Component {
+class Sidebar extends Component {
   constructor() {
     super();
     this.state = {
-      value: '',
+      query: '',
     }
   }
-
 
   render(){
     return(
@@ -18,6 +18,7 @@ class Locations extends Component {
         <div className="input-container">
           <DebounceInput
             type="text"
+            value={this.state.query}
             placeholder="Search locations..."
             minLength={2}
             debounceTimeout={300}
@@ -25,10 +26,13 @@ class Locations extends Component {
           />
         </div>
 
-        <p>This is the list of locations</p>
+        <div>
+
+        </div>
+          <p>This is the list of locations</p>
       </div>
     )
   }
 };
 
-export default Locations;
+export default Sidebar;

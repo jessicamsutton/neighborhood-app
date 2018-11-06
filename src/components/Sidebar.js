@@ -13,7 +13,7 @@ class Sidebar extends Component {
 
   render(){
     return(
-      <aside className="locations-container">
+      <aside className="sidebar">
 
         <div className="input-container">
           <DebounceInput

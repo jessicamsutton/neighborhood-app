@@ -12,3 +12,4 @@ The final project for the Front-End Nanodegree from Udacity.
 * Foursquare API
 * create-react-app
 * react-debounce-input
+* google-maps-react

@@ -1,34 +1,20 @@
 import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
+import '../data/locations.json';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
-class Map extends Component {
-  static defaultProps = {
-    center: {
-      lat: 43.2951,
-      lng: -0.370797
-    },
-    zoom: 13
-  };
+class MapContainer extends Component {
+  constructor() {
+    super();
+    this.state = {
+    }
+  }
 
   render() {
     return (
       <div className="map-container">
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyACukLzS9_nvdIVFzuZ5RuOIzK4qTGdzo8' }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-        >
-        <AnyReactComponent
-          lat={43.2951}
-          lng={-0.370797}
-          text={'Pau, France'}
-        />
-        </GoogleMapReact>
+        <p>This is a map. Trust me.</p>
       </div>
     );
   }
 }
 
-export default Map;
+export default MapContainer;

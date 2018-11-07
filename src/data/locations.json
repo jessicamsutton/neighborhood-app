@@ -1,27 +1,15 @@
 [
   {
-    "name": "Université de Pau et des Pays de l'Adour",
-    "city": "Pau",
-    "country": "France",
-    "pos": {"lat": 43.3219626, "lng": -0.3786765}
-  },
-  {
     "name": "Château de Pau",
     "city": "Pau",
     "country": "France",
-    "pos": {"lat": 43.2947094, "lng": -0.3774404}
+    "pos": {"lat": 43.29477, "lng": -0.37556}
   },
   {
-    "name": "Fontaine du Boulevard des Pyrenées",
+    "name": "Boulevard des Pyrenées",
     "city": "Pau",
     "country": "France",
-    "pos": {"lat": 43.2931786, "lng": -0.3732049}
-  },
-  {
-    "name": "Cave des Producteurs Jurançon",
-    "city": "Gan",
-    "country": "France",
-    "pos": {"lat": 43.2368246, "lng": -0.3899891}
+    "pos": {"lat": 43.293175, "lng": -0.371016}
   },
   {
     "name": "Les Sardines",
@@ -36,12 +24,6 @@
     "pos": {"lat": 43.2933742, "lng": -0.3679612}
   },
   {
-    "name": "Le Garage",
-    "city": "Pau",
-    "country": "France",
-    "pos": {"lat": 43.2993989, "lng": -0.3651797}
-  },
-  {
     "name": "Parc Beaumont",
     "city": "Pau",
     "country": "France",
@@ -54,22 +36,10 @@
     "pos": {"lat": 43.2994178, "lng": -0.3714134}
   },
   {
-    "name": "Po-nouilles",
-    "city": "Pau",
-    "country": "France",
-    "pos": {"lat": 43.297182, "lng": -0.3678138}
-  },
-  {
     "name": "Patisserie Saint André Letendart",
     "city": "Pau",
     "country": "France",
     "pos": {"lat": 43.2984225, "lng": -0.3661316}
-  },
-  {
-    "name": "Funicular",
-    "city": "Pau",
-    "country": "France",
-    "pos": {"lat": 43.2926333, "lng": -0.3719513}
   },
   {
     "name": "Grand Prix de Pau",
@@ -82,29 +52,5 @@
     "city": "Pau",
     "country": "France",
     "pos": {"lat": 43.2953914, "lng": -0.3703866}
-  },
-  {
-    "name": "Fontaine La Source",
-    "city": "Pau",
-    "country": "France",
-    "pos": {"lat": 43.296044, "lng": -0.3686126}
-  },
-  {
-    "name": "Taj Mahal",
-    "city": "Pau",
-    "country": "France",
-    "pos": {"lat": 43.2993273, "lng": -0.3649406}
-  },
-  {
-    "name": "Pharmacie des 7 Cantons",
-    "city": "Pau",
-    "country": "France",
-    "pos": {"lat": 43.2986666, "lng": -0.3729671}
-  },
-  {
-    "name": "Boulangerie Gamet",
-    "city": "Pau",
-    "country": "France",
-    "pos": {"lat": 43.2990056, "lng": -0.3727393}
   }
 ]

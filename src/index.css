@@ -14,29 +14,40 @@ code {
 }
 
 
+
 .header-container {
   top: 0;
   width: 100%;
   padding: 15px;
+  z-index: 100;
+  position: relative;
 }
 
 .sidebar {
-  padding: 30px 0 0;
+  z-index: 100;
+  margin: 100px 0 0;
   top: 0;
   bottom: 0;
-  position: fixed;
+  position: absolute;
   float: left;
-  width: 25%;
+  width: 350px;
+  max-width: 100%;
   overflow-y: scroll;
 }
 
 .sidebar-list {
   list-style-type: none;
-  margin: 15px;
+  margin: 5px;
+  text-align: left;
+}
+
+.input {
+  border: 2px solid black;
+  font-size: 20px;
 }
 
 .map-container {
   float: right;
-  width: 75%;
+  width: calc(100vw - 350px);
   height: 100vh;
 }

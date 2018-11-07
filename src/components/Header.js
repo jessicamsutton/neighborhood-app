@@ -4,7 +4,7 @@ class Header extends Component {
   render() {
     return (
       <nav className="header-container">
-        <h1>Neighborhood Map</h1>
+        <h1>Pau, Pyrénées-Atlantiques, France</h1>
       </nav>
     )
   }

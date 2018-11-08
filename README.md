@@ -5,6 +5,9 @@ The final project for the Front-End Nanodegree from Udacity.
 - [Dependencies](#dependencies)
 
 ## Instructions
+Clone repo
+`npm install`
+`npm start`
 
 ## Dependencies
 * React
@@ -13,3 +16,4 @@ The final project for the Front-End Nanodegree from Udacity.
 * create-react-app
 * react-debounce-input
 * google-maps-react
+* default-passive-events

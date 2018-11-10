@@ -4,46 +4,39 @@
     "address": "Boulevard des Pyrénées",
     "city": "64000 Pau",
     "country": "France",
-    "pos": {"lat": 43.293335, "lng": -0.369149}
+    "position": {"lat": 43.293335, "lng": -0.369149}
   },
   {
     "name": "Chateau de Pau",
     "address": "2 Rue du Château",
     "city": "64000 Pau",
     "country": "France",
-    "pos": {"lat": 43.29477, "lng": -0.37556}
+    "position": {"lat": 43.29477, "lng": -0.37556}
   },
   {
     "name": "Cinema Le Melies",
     "address": "6 Rue Bargoin",
     "city": "64000 Pau",
     "country": "France",
-    "pos": {"lat": 43.301336, "lng": -0.372347}
+    "position": {"lat": 43.301336, "lng": -0.372347}
   },
   {
     "name": "Le Garage",
     "city": "64000 Pau",
     "country": "France",
-    "pos": {"lat": 43.299395, "lng": -0.362991}
-  },
-  {
-    "name": "Les Halles de Pau",
-    "address": "Rue de la République",
-    "city": "64000 Pau",
-    "country": "France",
-    "pos": {"lat": 43.299583, "lng": -0.369872}
+    "position": {"lat": 43.299395, "lng": -0.362991}
   },
   {
     "name": "Place Clemenceau",
     "city": "Pau",
     "country": "France",
-    "pos": {"lat": 43.295492, "lng": -0.368481}
+    "position": {"lat": 43.295492, "lng": -0.368481}
   },
   {
     "name": "Les Sardines",
     "address": "9 Rue Gachet",
     "city": "64000 Pau",
     "country": "France",
-    "pos": {"lat": 43.29494, "lng": -0.367897}
+    "position": {"lat": 43.29494, "lng": -0.367897}
   }
 ]

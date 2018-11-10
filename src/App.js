@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import MapContainer from './components/Map.js';
 import Header from './components/Header.js';
 import Sidebar from './components/Sidebar.js';
+import MapContainer from './components/Map.js';
+import Modal from './components/Modal.js';
 import locations from './data/locations.json';
 
 class App extends Component {
@@ -13,19 +14,18 @@ class App extends Component {
       filteredLocations: locations,
       activeMarker: {},
       selectedPlace: {},
-      showingInfoWindow: false,
-      animation: {},
+      isHidden: true,
       currentId: {},
-      infoWindowImage: {}
+      modalImage: '',
     }
   }
 
   // Using Foursquare API to retrieve data for locations
-  getFoursquareData = (selectedPlace) => {
-     const FS_ID = 'VOYM5L31IRNAHBD0ILUAETR53NCI1UMFDNKDUIOYBE5AOOPN'
-     const FS_SECRET = 'HF0PPL2PEPWEGACV2KJVOYIG1K0HVOJGOVJ4LB50Q041HOJ2';
+  getFoursquareData = (location) => {
+     const CLIENT_ID = 'TYYZT41TMZVGX5XKNP5VYZH3LNMXZS4DV2ACIJRT5CZY0PFC'
+     const CLIENT_SECRET = 'VJTTMEMG4MZYYOVY2THWAXP05GEAPE2W5WARIUG3KSN4OBZB';
      const YYYYMMDD = '20181231';
-     let url = `https://api.foursquare.com/v2/venues/search?ll=${this.state.selectedPlace.position.lat},${this.state.selectedPlace.position.lng}&query=${this.state.selectedPlace.name}&v=${YYYYMMDD}&client_id=${FS_ID}&client_secret=${FS_SECRET}`
+     let url = `https://api.foursquare.com/v2/venues/search?ll=${location.position.lat},${location.position.lng}&query=${location.name}&v=${YYYYMMDD}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
 
       // Finds venue on Foursquare
       fetch(url)
@@ -34,12 +34,12 @@ class App extends Component {
         let currentId = results.response.venues[0].id;
 
         // Finds photo for venue on Foursquare
-        return fetch(`https://api.foursquare.com/v2/venues/${currentId}/photos?&client_id=${FS_ID}&client_secret=${FS_SECRET}&v=${YYYYMMDD}`);
+        return fetch(`https://api.foursquare.com/v2/venues/${currentId}/photos?&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&v=${YYYYMMDD}`);
       })
       .then((res) => res.json())
       .then((results) => {
         this.setState({
-          infoWindowImage: results.response.photos.items[0].prefix + '100x100' + results.response.photos.items[0].suffix,
+          modalImage: results.response.photos.items[0].prefix + '300x300' + results.response.photos.items[0].suffix,
         });
       })
       .catch(function(error) {
@@ -47,35 +47,39 @@ class App extends Component {
       })
   }
 
-  // Display InfoWindow upon corresponding marker being clicked
+  // Initiate marker animation and display modal with selected marker's data
   onMarkerClick = (props, marker, e) => {
     this.setState({
-      selectedPlace: props,
       activeMarker: marker,
-      showingInfoWindow: true,
+      selectedPlace: props,
+      selectedName: marker.name,
+      isHidden: false,
     });
-
-    console.log(props);
-    console.log(marker);
 
     this.getFoursquareData(this.state.selectedPlace);
   }
 
-  onListItemClick = (props) => {
-    console.log(props);
-  };
+  // Initiate marker animation and and display modal with selected list item's data
+  onListItemClick = (location) => {
+    this.setState({
+      selectedPlace: location,
+      selectedName: location.name,
+      isHidden: false,
+    })
+
+    this.getFoursquareData(location);
+  }
 
   // Close InfoWindow upon clicking elsewhere
-  closeInfoWindow = (props) => {
-    if (this.state.showingInfoWindow) {
-      this.setState({
-        infoWindowImage: {},
-        showingInfoWindow: false,
-        activeMarker: {},
-        animation: {}
-      })
-    }
-  };
+  closeModal = () => {
+    this.setState({
+      isHidden: true,
+      modalImage: {},
+      activeMarker: {},
+      selectedPlace: {},
+      selectedName: {},
+    })
+  }
 
   // Filter locations based on user input, reset when input element is empty
   filterLocations = (query) => {
@@ -98,28 +102,24 @@ class App extends Component {
       <div className="app">
         <Header />
         <MapContainer
-          allLocations={this.state.allLocations}
           filteredLocations={this.state.filteredLocations}
           onMarkerClick={this.onMarkerClick}
-          closeInfoWindow={this.closeInfoWindow}
-          activeMarker={this.state.activeMarker}
-          selectedPlace={this.state.selectedPlace}
-          showingInfoWindow={this.state.showingInfoWindow}
-          animation={this.state.animation}
-          currentId={this.state.currentId}
-          infoWindowImage={this.state.infoWindowImage}
-           />
-         <Sidebar
-           filteredLocations={this.state.filteredLocations}
-           filterLocations={this.filterLocations}
-           onMarkerClick={this.onMarkerClick}
-           activeMarker={this.state.activeMarker}
-           selectedPlace={this.state.selectedPlace}
-           showingInfoWindow={this.state.showingInfoWindow}
-           animation={this.state.animation}
-           currentId={this.state.currentId}
-           infoWindowImage={this.state.infoWindowImage}
-           onListItemClick={this.onListItemClick} />
+          selectedName={this.state.selectedName}
+        />
+        <Sidebar
+          filteredLocations={this.state.filteredLocations}
+          filterLocations={this.filterLocations}
+          selectedName={this.state.selectedName}
+          onListItemClick={this.onListItemClick}
+          />
+        {!this.state.isHidden &&
+            <Modal
+              isHidden={this.state.isHidden}
+              activeMarker={this.state.activeMarker}
+              modalImage={this.state.modalImage}
+              closeModal={this.closeModal}
+            />
+          }
       </div>
     )
   }

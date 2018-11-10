@@ -1,56 +1,49 @@
 [
   {
-    "name": "Château de Pau",
-    "city": "Pau",
+    "name": "Boulevard des Pyrenees",
+    "address": "Boulevard des Pyrénées",
+    "city": "64000 Pau",
+    "country": "France",
+    "pos": {"lat": 43.293335, "lng": -0.369149}
+  },
+  {
+    "name": "Chateau de Pau",
+    "address": "2 Rue du Château",
+    "city": "64000 Pau",
     "country": "France",
     "pos": {"lat": 43.29477, "lng": -0.37556}
   },
   {
-    "name": "Boulevard des Pyrenées",
+    "name": "Cinema Le Melies",
+    "address": "6 Rue Bargoin",
+    "city": "64000 Pau",
+    "country": "France",
+    "pos": {"lat": 43.301336, "lng": -0.372347}
+  },
+  {
+    "name": "Le Garage",
+    "city": "64000 Pau",
+    "country": "France",
+    "pos": {"lat": 43.299395, "lng": -0.362991}
+  },
+  {
+    "name": "Les Halles de Pau",
+    "address": "Rue de la République",
+    "city": "64000 Pau",
+    "country": "France",
+    "pos": {"lat": 43.299583, "lng": -0.369872}
+  },
+  {
+    "name": "Place Clemenceau",
     "city": "Pau",
     "country": "France",
-    "pos": {"lat": 43.293175, "lng": -0.371016}
+    "pos": {"lat": 43.295492, "lng": -0.368481}
   },
   {
     "name": "Les Sardines",
-    "city": "Pau",
+    "address": "9 Rue Gachet",
+    "city": "64000 Pau",
     "country": "France",
-    "pos": {"lat": 43.294967, "lng": -0.3677953}
-  },
-  {
-    "name": "Georgio Maître Artisan Glacier Pau",
-    "city": "Pau",
-    "country": "France",
-    "pos": {"lat": 43.2933742, "lng": -0.3679612}
-  },
-  {
-    "name": "Parc Beaumont",
-    "city": "Pau",
-    "country": "France",
-    "pos": {"lat": 43.295674, "lng": -0.3626001}
-  },
-  {
-    "name": "Les Gourmandises de Fébus",
-    "city": "Pau",
-    "country": "France",
-    "pos": {"lat": 43.2994178, "lng": -0.3714134}
-  },
-  {
-    "name": "Patisserie Saint André Letendart",
-    "city": "Pau",
-    "country": "France",
-    "pos": {"lat": 43.2984225, "lng": -0.3661316}
-  },
-  {
-    "name": "Grand Prix de Pau",
-    "city": "Pau",
-    "country": "France",
-    "pos": {"lat": 43.2938829, "lng": -0.3691665}
-  },
-  {
-    "name": "Chocolaterie de la Couronne",
-    "city": "Pau",
-    "country": "France",
-    "pos": {"lat": 43.2953914, "lng": -0.3703866}
+    "pos": {"lat": 43.29494, "lng": -0.367897}
   }
 ]

@@ -15,6 +15,8 @@ class Sidebar extends Component {
       <div className="sidebar">
         <div className="input-container">
           <DebounceInput
+            aria-label="Filter by location name"
+            tabIndex="1"
             className="input"
             type="text"
             value={this.query}
@@ -25,9 +27,12 @@ class Sidebar extends Component {
           />
         </div>
         <div>
-          <ul className="sidebar-list">
+          <ul className="sidebar-list" aria-label="List of given locations in Pau">
             {this.props.filteredLocations.map((location, index) =>
               <li
+                  role="button"
+                  aria-label="Click on the link to learn more about the location"
+                  tabIndex={2+index}
                   key={index}
                   name={location.name}
                   position={{ lat: location.position.lat, lng: location.position.lng }}

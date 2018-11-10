@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { DebounceInput } from 'react-debounce-input';
-import {GoogleApiWrapper} from 'google-maps-react';
+import { GoogleApiWrapper } from 'google-maps-react';
 
 class Sidebar extends Component {
   constructor() {
@@ -17,10 +17,10 @@ class Sidebar extends Component {
           <DebounceInput
             className="input"
             type="text"
-            value={this.state.query}
+            value={this.query}
             placeholder="Filter by location name"
             minLength={2}
-            debounceTimeout={500}
+            debounceTimeout={200}
             onChange={e => this.props.filterLocations(e.target.value)}
           />
         </div>
@@ -30,9 +30,10 @@ class Sidebar extends Component {
               <li
                   key={index}
                   name={location.name}
-                  position={{ lat: location.pos.lat, lng: location.pos.lng }}
-                  onClick={this.props.onListItemClick(location)}
-                  animation={location.name === this.props.activeMarker.name ? this.props.google.maps.Animation.BOUNCE : {}}
+                  position={{ lat: location.position.lat, lng: location.position.lng }}
+                  onClick={e => this.props.onListItemClick(location)}
+                  animation={location.name === this.props.selectedName ?
+                    this.props.google.maps.Animation.BOUNCE : {}}
               >
                 {location.name}
               </li>

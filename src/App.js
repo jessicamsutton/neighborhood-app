@@ -15,7 +15,6 @@ class App extends Component {
       activeMarker: {},
       selectedPlace: {},
       isHidden: true,
-      currentId: {},
       modalImage: '',
     }
   }
@@ -29,22 +28,20 @@ class App extends Component {
 
       // Finds venue on Foursquare
       fetch(url)
-      .then((res) => res.json())
-      .then(function(results) {
-        let currentId = results.response.venues[0].id;
+      .then((venues) => venues.json())
+      .then(function(venues) {
+        let currentId = venues.response.venues[0].id;
 
         // Finds photo for venue on Foursquare
         return fetch(`https://api.foursquare.com/v2/venues/${currentId}/photos?&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&v=${YYYYMMDD}`);
       })
-      .then((res) => res.json())
-      .then((results) => {
+      .then((photos) => photos.json())
+      .then((photos) => {
         this.setState({
-          modalImage: results.response.photos.items[0].prefix + '300x300' + results.response.photos.items[0].suffix,
+          modalImage: photos.response.photos.items[0].prefix + '300x300' + photos.response.photos.items[0].suffix,
         });
       })
-      .catch(function(error) {
-        console.log('Error: ', error);
-      })
+      .catch(err => alert('Error accessing Foursquare data: ', err));
   }
 
   // Initiate marker animation and display modal with selected marker's data
@@ -65,7 +62,7 @@ class App extends Component {
       selectedPlace: location,
       selectedName: location.name,
       isHidden: false,
-    })
+    });
 
     this.getFoursquareData(location);
   }

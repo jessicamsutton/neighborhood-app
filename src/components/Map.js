@@ -2,13 +2,19 @@ import React, { Component } from 'react';
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 class MapContainer extends Component {
+  componentDidMount() {
+    window.gm_authFailure = () => {
+      return <div><p>Map failed to load.</p></div>;
+    };
+  }
+
   render() {
     return (
       <main className="map-container">
         <Map
+          google={window.google}
           role="application"
           aria-label="map"
-          google={this.props.google}
           className="map"
           initialCenter={{ lat: 43.29, lng: -0.352 }}
           zoom={13}

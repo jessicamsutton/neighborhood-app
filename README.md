@@ -2,6 +2,9 @@ The final project for the Front-End Nanodegree from Udacity. The project require
 
 I decided to have a bit of fun with my project, and use the French city that I studied abroad in for a year. It's also a much more interesting place than where I live now. My current city does not have a castle.
 
+NOTE: Once the app is in production build, a service worker will be registered and installed.
+
+
 ## Table of Contents
 - [Instructions](#instructions)
 - [Dependencies](#dependencies)

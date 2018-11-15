@@ -2,6 +2,7 @@
   "name": "map-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://www.jessicamsutton.com/map-app",
   "dependencies": {
     "default-passive-events": "^1.0.10",
     "google-maps-react": "^2.0.2",
@@ -14,6 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "npm run deploy",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
